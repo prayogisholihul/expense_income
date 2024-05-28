@@ -1,6 +1,6 @@
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
-import 'model/expense_income_model.dart';
+import '../model/expense_income_model.dart';
 
 class ExpenseDB {
   static final ExpenseDB instance = ExpenseDB._internal();

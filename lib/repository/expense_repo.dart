@@ -1,7 +1,7 @@
-import 'package:expense_income/local_storage.dart';
+import 'package:expense_income/source/local_storage.dart';
 import 'package:sqflite/sqflite.dart';
 
-import 'model/expense_income_model.dart';
+import '../model/expense_income_model.dart';
 
 class Repository {
 

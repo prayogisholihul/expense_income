@@ -6,7 +6,7 @@ part of 'conversion_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$repositoryHash() => r'ac0747ea69d180745a32cdb6cfe50288df7da76d';
+String _$repositoryHash() => r'ed37dc5c0f257d1773eccfd000c7387b04110cf3';
 
 /// See also [repository].
 @ProviderFor(repository)
@@ -20,7 +20,7 @@ final repositoryProvider = AutoDisposeProvider<ConversionRepo>.internal(
 );
 
 typedef RepositoryRef = AutoDisposeProviderRef<ConversionRepo>;
-String _$getCurrenciesHash() => r'52ba8838e4b95bd86cf4d82db13542dbb91ea594';
+String _$getCurrenciesHash() => r'9fad698a7ba9a3b1a3d95a01dece035aa480f433';
 
 /// See also [getCurrencies].
 @ProviderFor(getCurrencies)

@@ -1,7 +1,7 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../model/expense_income_model.dart';
-import '../repository.dart';
+import '../repository/expense_repo.dart';
 
 part 'expense_provider.g.dart';
 

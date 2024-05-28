@@ -1,6 +1,6 @@
-import 'package:expense_income/network.dart';
+import 'package:expense_income/source/network.dart';
 
-import 'model/conversion_model.dart';
+import '../model/conversion_model.dart';
 
 class ConversionRepo {
   final network = Network();
