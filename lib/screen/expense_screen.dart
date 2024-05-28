@@ -8,7 +8,9 @@ import '../widget/expense_widget.dart';
 import 'expense_btm_sheet.dart';
 
 class ExpenseScreen extends ConsumerWidget {
-  const ExpenseScreen({super.key});
+  const ExpenseScreen({super.key, this.isConvertedMoney = false});
+
+  final bool isConvertedMoney;
 
   void bottomSheet(BuildContext context, WidgetRef ref, ExpenseData? expense) {
     showModalBottomSheet(
@@ -33,7 +35,6 @@ class ExpenseScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final expensesAsyncValue = ref.watch(getAllExpensesProvider);
-    final direction = ref.watch(conversionDirectionProvider);
 
     return Scaffold(
         appBar: AppBar(
@@ -44,7 +45,7 @@ class ExpenseScreen extends ConsumerWidget {
           actions: [
             const Text('IDR'),
             Switch(
-                value: direction,
+                value: isConvertedMoney,
                 onChanged: (isActive) {
                   ref.read(conversionDirectionProvider.notifier)
                       .toggleDirection();

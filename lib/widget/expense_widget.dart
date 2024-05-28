@@ -28,7 +28,6 @@ class _ExpenseItemState extends ConsumerState<ExpenseItem> {
         ? formatCurrencyUSD(converted)
         : formatCurrency(widget.expenseData.amount);
 
-    print(converted);
     return Card(
       color: Theme
           .of(context)

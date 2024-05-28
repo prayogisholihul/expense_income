@@ -1,4 +1,5 @@
 import 'package:expense_income/screen/expense_screen.dart';
+import 'package:expense_income/screen/main_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -17,6 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData().copyWith(
         colorScheme: kColorScheme,
         appBarTheme: const AppBarTheme().copyWith(
@@ -43,7 +45,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: const ExpenseScreen(),
+      home: const MainScreen(),
     );
   }
 }
