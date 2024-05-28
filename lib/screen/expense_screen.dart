@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../model/expense_income_model.dart';
+import '../provider/conversion_provider.dart';
 import '../provider/expense_provider.dart';
 import '../widget/expense_widget.dart';
 import 'expense_btm_sheet.dart';
@@ -32,6 +33,7 @@ class ExpenseScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final expensesAsyncValue = ref.watch(getAllExpensesProvider);
+    final direction = ref.watch(conversionDirectionProvider);
 
     return Scaffold(
         appBar: AppBar(
@@ -39,6 +41,17 @@ class ExpenseScreen extends ConsumerWidget {
             'Expense Tracker',
             style: Theme.of(context).textTheme.titleLarge,
           ),
+          actions: [
+            const Text('IDR'),
+            Switch(
+                value: direction,
+                onChanged: (isActive) {
+                  ref.read(conversionDirectionProvider.notifier)
+                      .toggleDirection();
+                }),
+            const Text('USD'),
+            const SizedBox(width: 12,)
+          ],
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
@@ -67,9 +80,8 @@ class ExpenseScreen extends ConsumerWidget {
                 ),
                 onDismissed: (direction) {
                   ref.read(deleteExpenseProvider(expenses[idx].id!));
-                  Future.delayed(const Duration(seconds: 1), () {
-                    ref.refresh(getAllExpensesProvider);
-                  });
+                  expenses.removeAt(idx);
+                  ref.refresh(getAllExpensesProvider);
                 },
                 child: InkWell(
                   onTap: () {

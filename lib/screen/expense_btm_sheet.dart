@@ -6,14 +6,14 @@ import '../provider/expense_provider.dart';
 
 class ExpenseAddBtmSheet extends ConsumerStatefulWidget {
   const ExpenseAddBtmSheet({
-    Key? key,
+    super.key,
     this.expenseData,
-  }) : super(key: key);
+  });
 
   final ExpenseData? expenseData;
 
   @override
-  _ExpenseAddBtmSheetState createState() => _ExpenseAddBtmSheetState();
+  ConsumerState<ExpenseAddBtmSheet> createState() => _ExpenseAddBtmSheetState();
 }
 
 class _ExpenseAddBtmSheetState extends ConsumerState<ExpenseAddBtmSheet> {

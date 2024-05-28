@@ -5,7 +5,16 @@ String formatCurrency(int amount) {
   final currencyFormat = NumberFormat.currency(
     locale: 'id_ID',
     symbol: 'Rp ',
-    decimalDigits: 0, // Set the number of decimal digits to 0 for IDR
+    decimalDigits: 0,
+  );
+  return currencyFormat.format(amount);
+}
+
+String formatCurrencyUSD(double amount) {
+  final currencyFormat = NumberFormat.currency(
+    locale: 'en_US',
+    symbol: '\$ ',
+    decimalDigits: 2,
   );
   return currencyFormat.format(amount);
 }
