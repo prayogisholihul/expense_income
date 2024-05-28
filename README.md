@@ -1,5 +1,8 @@
 # Expense/Income Tracker Application
 
+[Watch Demo Video](https://drive.google.com/file/d/1W56VTordsX9zHZuMmLFRODYPkISlm6uC/view?usp=sharing)
+[File APK](https://drive.google.com/drive/folders/1cvB5Z3vP7YpPqEj8SN9ZQZoNRRQtb_mE?usp=sharing)
+
 ## Overview
 
 This Flutter application allows users to manage their expenses and income. The app provides functionalities for creating, reading, updating, and deleting (CRUD) transactions. Additionally, it offers a feature to convert USD currency and suggests random activities as busywork.
